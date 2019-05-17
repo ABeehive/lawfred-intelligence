@@ -2,7 +2,7 @@
 Search Legal Intelligence directly from your Alfred App. 
 It will display the 10 most relevant results. Clicking a result will open the Legal Intelligence link. Make sure you're logged into Legal Intelligence before using Lawfred.
 
-![Lawfred in action](Lawfredinaction.gif)
+![](https://annaberlee.nl/Lawfredinaction.gif)
 
 # Installation 
 You require a Legal Intelligence account, client-secret, and authorisation token.
