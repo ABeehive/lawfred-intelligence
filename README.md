@@ -5,7 +5,8 @@ It will display the 10 most relevant results. Clicking a result will open the Le
 ![](Lawfredinaction.gif)
 
 # Installation 
-Download the workflow from [releases](https://github.com/ABeehive/lawfred-intelligence/releases)
+Download the workflow from [releases](https://github.com/ABeehive/lawfred-intelligence/releases). 
+
 You require a Legal Intelligence account, client-secret, and authorisation token.
 It also requires an Alfred Powerpack license.
 
