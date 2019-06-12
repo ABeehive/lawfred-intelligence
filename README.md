@@ -24,7 +24,7 @@ This should return a large string, which is your Authorisation Token. Copy this.
 
 ## Insert authorisation token in workflow
 Open the imported workflow in Alfred. 
-Open the Environmental Variables and insert your with your Authorisation Token at the token variable. 
+Open the Environmental Variables and insert your Authorisation Token at the token variable. 
 
 Save and that ought to do it!
 
