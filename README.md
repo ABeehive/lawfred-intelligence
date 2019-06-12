@@ -1,6 +1,6 @@
 # Lawfred Intelligence
 Search Legal Intelligence directly from your Alfred App. 
-It will display the 10 most relevant results. Clicking a result will open the Legal Intelligence link. Make sure you're logged into Legal Intelligence before using Lawfred.
+It will display the 10 most relevant results. Clicking a result will open the Legal Intelligence link to the document. If your desired result isn't there, at the bottom there is also a 'view all results', which directs you to your search query on Legal Intelligence. You need not be logged into Legal Intelligence, however you do need a token, which expires every day. I am working on a way to generate this every day.
 
 ![](Lawfredinaction.gif)
 
@@ -24,14 +24,14 @@ This should return a large string, which is your Authorisation Token. Copy this.
 
 ## Insert authorisation token in workflow
 Open the imported workflow in Alfred. 
-Open the Script Filter and replace @TOKEN with your Authorisation Token. 
+Open the Environmental Variables and insert your with your Authorisation Token at the token variable. 
 
 Save and that ought to do it!
 
 
 # TODO
-- [ ] Fix bug that less than 10 results won't be displayed. (has to do with the use of count function)
-- [ ] Include a delay, so that api is not called for each letter that is typed
-- [ ] Find a way that login is not required in browser for it to work
+- [X] ~~Fix bug that less than 10 results won't be displayed. (has to do with the use of count function)
+- [x] ~~Include a delay, so that api is not called for each letter that is typed
+- [x] ~~Find a way that login is not required in browser for it to work
 - [ ] Find a way to automatically generate authorisation token
-- [ ] Insert a link to all the search results in Legal Intelligence itself 
+- [x] ~~Insert a link to all the search results in Legal Intelligence itself 
