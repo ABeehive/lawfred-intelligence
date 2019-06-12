@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>lawfred-intelligence</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>A7260142-98E3-480B-9156-959C2AE8F64D</key>
+		<array/>
+		<key>AD00D284-C85A-451C-A480-FE141AF0F103</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A7260142-98E3-480B-9156-959C2AE8F64D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Anna Berlee</string>
+	<key>description</key>
+	<string>Search Legal Intelligence straight from Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Lawfred Intelligence</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>lf</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Momentje</string>
+				<key>script</key>
+				<string>import json 
+import sys
+import urllib
+import urllib2
+import os
+
+zoekterm = urllib.quote(sys.argv[1])
+link = 'https://api.legalintelligence.com/search?q=' + zoekterm
+req = urllib2.Request(link)
+req.add_header('Authorization', 'Bearer ' + os.getenv('token'))
+resp = urllib2.urlopen(req)
+content = resp.read()
+values = json.loads(content)
+
+begin = '{"items":['	
+lijst = ''
+eind = ']}'
+counter = 0
+
+aantal = '{"uid":"total","type":"icon","title":"Alle resultaten","subtitle":"Klik hier voor alle resultaten op LI","arg":"https://www.legalintelligence.com/search?q=' + zoekterm + '","autocomplete":"Desktop","icon":{"type":"icon","path":""}}'
+
+for value in values["Documents"]:	
+	title = value["DisplayTitle"]
+	url = value["UrlWithAutoLogOnToken"]
+	subtitle = value["Summary"]
+	lijst = lijst + '{"uid":"desktop","type":"file","title":"' + title + '","subtitle":"' + subtitle + '","arg":"' + url + '","autocomplete":"Desktop","icon":{"type":"link","path":"link.png"}},'
+
+	if counter &gt; 10 :
+    		break
+	counter = counter + 1
+
+
+output = begin + lijst + aantal + eind
+sys.stdout.write(output)
+
+
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>zoeken</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>AD00D284-C85A-451C-A480-FE141AF0F103</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>A7260142-98E3-480B-9156-959C2AE8F64D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow allows you to search through Legal Intelligence straight from Alfred. 
+
+Type lf [Search term] and you're good to go. Hitting Return on a result will go to the legalintelligence link which is often straight to the document.
+
+It requires an authorisation token. See the GitHub (https://github.com/ABeehive/lawfred-intelligence/) for information on how to get the Authorisation Token. 
+
+The ClientID and ClientSecret aren't required yet, but will be for the next version, as we want to automatically generate the token, as it expires after one day. The workflow in this version however should work without these values. The Token value is required!
+
+Enter it on the right under 'Value' --&gt;</string>
+	<key>uidata</key>
+	<dict>
+		<key>A7260142-98E3-480B-9156-959C2AE8F64D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>480</integer>
+			<key>ypos</key>
+			<integer>180</integer>
+		</dict>
+		<key>AD00D284-C85A-451C-A480-FE141AF0F103</key>
+		<dict>
+			<key>xpos</key>
+			<integer>80</integer>
+			<key>ypos</key>
+			<integer>180</integer>
+		</dict>
+	</dict>
+	<key>variables</key>
+	<dict>
+		<key>clientid</key>
+		<string>a.berlee@uu.nl</string>
+		<key>clientsecret</key>
+		<string>fc1508bb-b726-4d08-895d-00aa77c966d8</string>
+		<key>token</key>
+		<string>eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJsaTpjbGllbnRJZCI6IkdGdVFFenVyQ2J2ZzFSZzUzUEJDdWc9PSIsImxpOnVzZXJJZCI6IlhyRzNGRGdvbTFRPSIsImxpOnJvbGVzIjoiIiwibGk6c3Vic2l0ZXMiOiJPOWxtRFRmM21aTzFCVitxK1FEckZ3PT0iLCJuYmYiOjE1NjAzMjQzMjUsImV4cCI6MTU2MDQxMDcyNSwiaXNzIjoiTE9DQUxfQVVUSE9SSVRZIiwiYXVkIjoiYWxsIn0.CwqKN0Xf68uLPxcLMulApSpmCu0lYD8oj2VcxJKPizg</string>
+	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>clientid</string>
+		<string>clientsecret</string>
+		<string>token</string>
+	</array>
+	<key>version</key>
+	<string>1.1</string>
+	<key>webaddress</key>
+	<string>www.annaberlee.nl</string>
+</dict>
+</plist>
