@@ -30,8 +30,8 @@ Save and that ought to do it!
 
 
 # TODO
-- [X] ~~Fix bug that less than 10 results won't be displayed. (has to do with the use of count function)
-- [x] ~~Include a delay, so that api is not called for each letter that is typed
-- [x] ~~Find a way that login is not required in browser for it to work
+- [X] ~~Fix bug that less than 10 results won't be displayed. (has to do with the use of count function)~~
+- [x] ~~Include a delay, so that api is not called for each letter that is typed~~
+- [x] ~~Find a way that login is not required in browser for it to work~~
 - [ ] Find a way to automatically generate authorisation token
-- [x] ~~Insert a link to all the search results in Legal Intelligence itself 
+- [x] ~~Insert a link to all the search results in Legal Intelligence itself ~~
