@@ -4,10 +4,21 @@
 <dict>
 	<key>bundleid</key>
 	<string>lawfred-intelligence</string>
-	<key>category</key>
-	<string>Tools</string>
 	<key>connections</key>
 	<dict>
+		<key>90D24FB3-8E0D-48E8-982C-CFEF682E5083</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A7260142-98E3-480B-9156-959C2AE8F64D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>A7260142-98E3-480B-9156-959C2AE8F64D</key>
 		<array/>
 		<key>AD00D284-C85A-451C-A480-FE141AF0F103</key>
@@ -67,11 +78,33 @@ import sys
 import urllib
 import urllib2
 import os
+import requests
+
+
+# Get Bearer token
+
+headers = {
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'X-SubSiteCode': 'LI',
+}
+
+data = {
+  'grant_type': 'client_credentials',
+  'client_id': os.getenv('clientid'),
+  'client_secret': os.getenv('clientsecret')
+}
+
+response = requests.post('https://api.legalintelligence.com/token', headers=headers, data=data, verify=False)
+inhoud = response.text
+values1 = json.loads(inhoud)
+token = values1['access_token']
+
+# Get search results
 
 zoekterm = urllib.quote(sys.argv[1])
 link = 'https://api.legalintelligence.com/search?q=' + zoekterm
 req = urllib2.Request(link)
-req.add_header('Authorization', 'Bearer ' + os.getenv('token'))
+req.add_header('Authorization', 'Bearer ' + token)
 resp = urllib2.urlopen(req)
 content = resp.read()
 values = json.loads(content)
@@ -138,32 +171,146 @@ sys.stdout.write(output)
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>laatste</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>een momentje...</string>
+				<key>script</key>
+				<string>import json 
+import sys
+import urllib
+import urllib2
+import os
+import requests
+
+# Get Bearer token
+
+headers = {
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'X-SubSiteCode': 'LI',
+}
+
+data = {
+  'grant_type': 'client_credentials',
+  'client_id': os.getenv('clientid'),
+  'client_secret': os.getenv('clientsecret')
+}
+
+response = requests.post('https://api.legalintelligence.com/token', headers=headers, data=data, verify=False)
+inhoud = response.text
+values1 = json.loads(inhoud)
+token = values1['access_token']
+
+# Get latest 
+
+zoekterm = urllib.quote(sys.argv[1])
+link = 'https://api.legalintelligence.com/search?q=*&amp;fq=Source_HF:0|200_Tijdschriften&amp;fq=Source_HF:1|200_Tijdschriften|250_' + zoekterm + '&amp;sort=PUBLICATION_DATE_DESC&amp;rows=10'
+req = urllib2.Request(link)
+req.add_header('Authorization', 'Bearer ' + token)
+resp = urllib2.urlopen(req)
+content = resp.read()
+values = json.loads(content)
+
+begin = '{"items":['	
+lijst = ''
+eind = ']}'
+counter = 0
+
+aantal = '{"uid":"total","type":"icon","title":"Alle resultaten","subtitle":"Klik hier voor alle resultaten op LI","arg":"https://www.legalintelligence.com/search?q=' + zoekterm + '","autocomplete":"Desktop","icon":{"type":"icon","path":""}}'
+
+for value in values["Documents"]:	
+	title = value["Title"]
+	url = value["UrlWithAutoLogOnToken"]
+	subtitle = value["Summary"]
+	lijst = lijst + '{"uid":"desktop","type":"file","title":"' + title + '","subtitle":"' + subtitle + '","arg":"' + url + '","autocomplete":"Desktop","icon":{"type":"link","path":"link.png"}},'
+
+	if counter &gt; 10 :
+    		break
+	counter = counter + 1
+
+
+output = begin + lijst + aantal + eind
+sys.stdout.write(output)
+
+
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Let op hoofdlettergebruik, bijv. : WPNR maar MvV</string>
+				<key>title</key>
+				<string>Overzicht van het laatste nummer van...</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>90D24FB3-8E0D-48E8-982C-CFEF682E5083</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>This workflow allows you to search through Legal Intelligence straight from Alfred. 
 
-Type lf [Search term] and you're good to go. Hitting Return on a result will go to the legalintelligence link which is often straight to the document.
+Type 'lf [Search term]' and you're good to go. Hitting Return on a result will go to the legalintelligence link which is often straight to the document.
 
-It requires an authorisation token. See the GitHub (https://github.com/ABeehive/lawfred-intelligence/) for information on how to get the Authorisation Token. 
+You can also get the latest articles published in your favourite journal by using the 'laatste [abbreviation]'
 
-The ClientID and ClientSecret aren't required yet, but will be for the next version, as we want to automatically generate the token, as it expires after one day. The workflow in this version however should work without these values. The Token value is required!
+The workflow requires your ClientSecret and ClientID. Enter those --&gt;
 
-Enter it on the right under 'Value' --&gt;</string>
+ClientID = most likely your email address
+ClientSecret can be generated by visiting this link while you're logged in on Legal Intelligence : https://www.legalintelligence.com/userprofile?opengenerateapikeylightbox=true</string>
 	<key>uidata</key>
 	<dict>
+		<key>90D24FB3-8E0D-48E8-982C-CFEF682E5083</key>
+		<dict>
+			<key>xpos</key>
+			<integer>245</integer>
+			<key>ypos</key>
+			<integer>375</integer>
+		</dict>
 		<key>A7260142-98E3-480B-9156-959C2AE8F64D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>480</integer>
+			<integer>540</integer>
 			<key>ypos</key>
-			<integer>180</integer>
+			<integer>305</integer>
 		</dict>
 		<key>AD00D284-C85A-451C-A480-FE141AF0F103</key>
 		<dict>
 			<key>xpos</key>
-			<integer>80</integer>
+			<integer>245</integer>
 			<key>ypos</key>
-			<integer>180</integer>
+			<integer>250</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -171,18 +318,15 @@ Enter it on the right under 'Value' --&gt;</string>
 		<key>clientid</key>
 		<string>a.berlee@uu.nl</string>
 		<key>clientsecret</key>
-		<string>fc1508bb-b726-4d08-895d-00aa77c966d8</string>
-		<key>token</key>
-		<string>eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJsaTpjbGllbnRJZCI6IkdGdVFFenVyQ2J2ZzFSZzUzUEJDdWc9PSIsImxpOnVzZXJJZCI6IlhyRzNGRGdvbTFRPSIsImxpOnJvbGVzIjoiIiwibGk6c3Vic2l0ZXMiOiJPOWxtRFRmM21aTzFCVitxK1FEckZ3PT0iLCJuYmYiOjE1NjAzMjQzMjUsImV4cCI6MTU2MDQxMDcyNSwiaXNzIjoiTE9DQUxfQVVUSE9SSVRZIiwiYXVkIjoiYWxsIn0.CwqKN0Xf68uLPxcLMulApSpmCu0lYD8oj2VcxJKPizg</string>
+		<string>790b26f6-1f86-494c-99cc-e8c3d3fd5e70</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
 		<string>clientid</string>
 		<string>clientsecret</string>
-		<string>token</string>
 	</array>
 	<key>version</key>
-	<string>1.1</string>
+	<string>1.2</string>
 	<key>webaddress</key>
 	<string>www.annaberlee.nl</string>
 </dict>
