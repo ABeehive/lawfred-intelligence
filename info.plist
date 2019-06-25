@@ -6,6 +6,32 @@
 	<string>lawfred-intelligence</string>
 	<key>connections</key>
 	<dict>
+		<key>64AC0E03-AA9D-46AA-87C7-20F608D300EA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A7260142-98E3-480B-9156-959C2AE8F64D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>85BCF534-AF41-44A1-9F56-1EF3F1E6725B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A7260142-98E3-480B-9156-959C2AE8F64D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>90D24FB3-8E0D-48E8-982C-CFEF682E5083</key>
 		<array>
 			<dict>
@@ -34,17 +60,363 @@
 				<false/>
 			</dict>
 		</array>
+		<key>C6C2D9B2-4C4F-4ABF-BA59-BF5384D7579E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A7260142-98E3-480B-9156-959C2AE8F64D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Anna Berlee</string>
 	<key>description</key>
-	<string>Search Legal Intelligence straight from Alfred</string>
+	<string>Search Dutch Legal Sources</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
 	<string>Lawfred Intelligence</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>wet</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Momentje</string>
+				<key>script</key>
+				<string>import xmltodict
+import json
+import urllib
+import urllib2
+import sys
+import datetime
+
+# Datum ophalen. Dat is nodig voor geldigheidsdatum opvragen
+currentDT = datetime.datetime.now()
+vandaag = currentDT.strftime("%Y-%m-%d")
+
+# Zoekterm opvragen
+zoekterm = urllib.quote(sys.argv[1])
+link = 'http://zoekservice.overheid.nl/sru/Search?operation=searchRetrieve&amp;version=1.2&amp;x-connection=BWB&amp;maximumRecords=10&amp;query=overheidbwb.titel=' + zoekterm + '%20and%20overheidbwb.geldigheidsdatum=' + vandaag
+
+# Dit geeft een XML. die omzetten in JSON
+resp = urllib2.urlopen(link)
+data = json.dumps(xmltodict.parse(resp))
+values = json.loads(data)
+
+# Tel het aantal resultaten (dit is namelijk het aantal keer dat hij moet loopen dadelijk
+
+root = values['searchRetrieveResponse']['records']['record']
+aantal = len(root)
+
+# Dit is voor de opbouw van output voor Alfred
+begin = '{"items":['
+lijst = ''
+eind = ']}'
+
+# Alle resultaten link - altijd als laatste, tenzij er maar 1 resultaat is
+verder = '{"uid":"","type":"icon","title":"Alle resultaten","subtitle":"Klik hier voor alle resultaten op wetten.overheid.nl","arg":"https://wetten.overheid.nl/zoeken/zoekresultaat/rs/2,3,4/titel/' + zoekterm + '/titelf/1/tekstf/1/artnrb/0/d/15-05-2019/dx/0' + '","autocomplete":"Desktop","icon":{"type":"icon","path":""}}'
+
+
+# Als er maar 1 overeenkomst is dan is de output niet een list maar een dict. Daarom controleren of het een dict is en dan het ene resultaat weergeven (, aan het eind van lijst weggehaald)
+if type(root) is dict:
+    title = values['searchRetrieveResponse']['records']['record']["recordData"]["gzd"]["originalData"]["overheidbwb:meta"]["owmskern"]["dcterms:title"]
+    bwbid = values['searchRetrieveResponse']['records']['record']["recordData"]["gzd"]["originalData"]["overheidbwb:meta"]["owmskern"]["dcterms:identifier"]
+    soort = values['searchRetrieveResponse']['records']['record']["recordData"]["gzd"]["originalData"]["overheidbwb:meta"]["owmskern"]["dcterms:type"]
+    creator = values['searchRetrieveResponse']['records']['record']["recordData"]["gzd"]["originalData"]["overheidbwb:meta"]["owmskern"]["dcterms:creator"]
+    url = 'https://wetten.overheid.nl/'+ bwbid
+    lijst = lijst + '{"uid":"","type":"file","title":"' + title + '","subtitle":"' + soort + ' - ' + creator + '","arg":"' + url + '","autocomplete":"no","icon":{"type":"link","path":"wet.png"}}'
+    verder = ''
+else:
+# Als er meer dan een resultaat is dan loopen die handel!
+    for i in range(aantal):
+        title = values['searchRetrieveResponse']['records']['record'][i]["recordData"]["gzd"]["originalData"]["overheidbwb:meta"]["owmskern"]["dcterms:title"]
+        bwbid = values['searchRetrieveResponse']['records']['record'][i]["recordData"]["gzd"]["originalData"]["overheidbwb:meta"]["owmskern"]["dcterms:identifier"]
+        soort = values['searchRetrieveResponse']['records']['record'][i]["recordData"]["gzd"]["originalData"]["overheidbwb:meta"]["owmskern"]["dcterms:type"]
+        creator = values['searchRetrieveResponse']['records']['record'][i]["recordData"]["gzd"]["originalData"]["overheidbwb:meta"]["owmskern"]["dcterms:creator"]
+        url = 'https://wetten.overheid.nl/'+ bwbid
+        lijst = lijst + '{"uid":"","type":"file","title":"' + title + '","subtitle":"' + soort + ' - ' + creator + '","arg":"' + url + '","autocomplete":"no","icon":{"type":"link","path":"wet.png"}},'
+
+# Opbouwen van de output
+output = begin + lijst + verder + eind
+
+# Laat maar zien die output!
+sys.stdout.write(output)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Typ een deel van de naam of de afkorting.</string>
+				<key>title</key>
+				<string>Zoeken naar een wet</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>85BCF534-AF41-44A1-9F56-1EF3F1E6725B</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>hr</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Een momentje...</string>
+				<key>script</key>
+				<string>import xmltodict
+import json
+import urllib2
+import sys
+import datetime
+from datetime import timedelta
+
+
+# Datum ophalen. Dat is nodig voor geldigheidsdatum opvragen - vervolgens ook de datum van een week geleden opvragen.
+current = datetime.datetime.now()
+weekago = datetime.datetime.now() - timedelta(days=7)
+vandaag = current.strftime("%Y-%m-%d")
+weekgeleden = weekago.strftime("%Y-%m-%d")
+
+# Zoekterm opvragen
+# zoekterm = urllib.quote(sys.argv[1]) - Geen zoekterm nodig. Keyword invoeren is genoeg.
+link = 'http://data.rechtspraak.nl/uitspraken/zoeken?creator=http://standaarden.overheid.nl/owms/terms/Hoge_Raad_der_Nederlanden&amp;date=' + weekgeleden + '&amp;date=' + vandaag
+
+# Dit geeft een XML. die omzetten in JSON
+resp = urllib2.urlopen(link)
+data = json.dumps(xmltodict.parse(resp))
+values = json.loads(data)
+
+# Tel het aantal resultaten (dit is namelijk het aantal keer dat hij moet loopen dadelijk
+
+root = values['feed']['entry']
+aantal = len(root)
+# Dit is voor de opbouw van output voor Alfred
+begin = '{"items":['
+lijst = ''
+eind = ']}'
+
+# Alle resultaten link - altijd als laatste
+verder = '{"uid":"","type":"icon","title":"Alle resultaten","subtitle":"Kijk liever zelf op rechtspraak.nl","arg":"http://www.rechtspraak.nl/uitspraken' + '","autocomplete":"no","icon":{"type":"icon","path":""}}'
+
+
+# Ik ga er vanuit dat er altijd tenminste 2 uitspraken zijn. Zo niet, dan zal er een error zijn.
+for i in range(aantal):
+    title = values['feed']['entry'][i]['title']['#text']
+    # Het wil nog wel eens voorkomen dat er geen inhoudsindicatie is gegeven. In dat geval komt er een error. Deze error wordt overgeslagen en de samenvatting zal dan zijn 'Geen inhoudsindicatie gegeven.'
+    try:
+        summary = values['feed']['entry'][i]['summary']['#text']
+    except KeyError:
+        summary = 'Geen inhoudsindicatie gegeven.'
+    url = values['feed']['entry'][i]['link']['@href']
+    lijst = lijst + '{"uid":"","type":"file","title":"' + title + '","subtitle":"' + summary + '","arg":"' + url + '","autocomplete":"no","icon":{"type":"link","path":"gavel.png"}},'
+
+
+# Opbouwen van de output
+output = begin + lijst + verder + eind
+
+# Laat maar zien die output!
+sys.stdout.write(output)
+
+
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Van de afgelopen week</string>
+				<key>title</key>
+				<string>Laaste HR uitspraken</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C6C2D9B2-4C4F-4ABF-BA59-BF5384D7579E</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>phr</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Een momentje...</string>
+				<key>script</key>
+				<string>import xmltodict
+import json
+import urllib2
+import sys
+import datetime
+from datetime import timedelta
+
+
+# Datum ophalen. Dat is nodig voor geldigheidsdatum opvragen - vervolgens ook de datum van een week geleden opvragen.
+current = datetime.datetime.now()
+weekago = datetime.datetime.now() - timedelta(days=7)
+vandaag = current.strftime("%Y-%m-%d")
+weekgeleden = weekago.strftime("%Y-%m-%d")
+
+# Zoekterm opvragen
+# zoekterm = urllib.quote(sys.argv[1]) - Geen zoekterm nodig. Keyword invoeren is genoeg.
+link = 'http://data.rechtspraak.nl/uitspraken/zoeken?creator=http://standaarden.overheid.nl/owms/terms/Parket_bij_de_Hoge_Raad&amp;date=' + weekgeleden + '&amp;date=' + vandaag
+
+# Dit geeft een XML. die omzetten in JSON
+resp = urllib2.urlopen(link)
+data = json.dumps(xmltodict.parse(resp))
+values = json.loads(data)
+
+# Tel het aantal resultaten (dit is namelijk het aantal keer dat hij moet loopen dadelijk
+
+root = values['feed']['entry']
+aantal = len(root)
+# Dit is voor de opbouw van output voor Alfred
+begin = '{"items":['
+lijst = ''
+eind = ']}'
+
+# Alle resultaten link - altijd als laatste
+verder = '{"uid":"","type":"icon","title":"Alle resultaten","subtitle":"Kijk liever zelf op rechtspraak.nl","arg":"http://www.rechtspraak.nl/uitspraken' + '","autocomplete":"no","icon":{"type":"icon","path":""}}'
+
+
+# Ik ga er vanuit dat er altijd tenminste 2 uitspraken zijn. Zo niet, dan zal er een error zijn.
+for i in range(aantal):
+    title = values['feed']['entry'][i]['title']['#text']
+    # Het wil nog wel eens voorkomen dat er geen inhoudsindicatie is gegeven. In dat geval komt er een error. Deze error wordt overgeslagen en de samenvatting zal dan zijn 'Geen inhoudsindicatie gegeven.'
+    try:
+        summary = values['feed']['entry'][i]['summary']['#text']
+    except KeyError:
+        summary = 'Geen inhoudsindicatie gegeven.'
+    url = values['feed']['entry'][i]['link']['@href']
+    lijst = lijst + '{"uid":"","type":"file","title":"' + title + '","subtitle":"' + summary + '","arg":"' + url + '","autocomplete":"no","icon":{"type":"link","path":"phr.png"}},'
+
+
+# Opbouwen van de output
+output = begin + lijst + verder + eind
+
+# Laat maar zien die output!
+sys.stdout.write(output)
+
+
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Van de afgelopen week</string>
+				<key>title</key>
+				<string>Laaste AG conclusies</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>64AC0E03-AA9D-46AA-87C7-20F608D300EA</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>A7260142-98E3-480B-9156-959C2AE8F64D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -73,7 +445,7 @@
 				<key>runningsubtext</key>
 				<string>Momentje</string>
 				<key>script</key>
-				<string>import json 
+				<string>import json
 import sys
 import urllib
 import urllib2
@@ -109,18 +481,18 @@ resp = urllib2.urlopen(req)
 content = resp.read()
 values = json.loads(content)
 
-begin = '{"items":['	
+begin = '{"items":['
 lijst = ''
 eind = ']}'
 counter = 0
 
-aantal = '{"uid":"total","type":"icon","title":"Alle resultaten","subtitle":"Klik hier voor alle resultaten op LI","arg":"https://www.legalintelligence.com/search?q=' + zoekterm + '","autocomplete":"Desktop","icon":{"type":"icon","path":""}}'
+aantal = '{"uid":"","type":"icon","title":"Alle resultaten","subtitle":"Klik hier voor alle resultaten op LI","arg":"https://www.legalintelligence.com/search?q=' + zoekterm + '","autocomplete":"no","icon":{"type":"icon","path":""}}'
 
-for value in values["Documents"]:	
-	title = value["DisplayTitle"]
+for value in values["Documents"]:
+	title = value["DisplayTitle"].replace('"','')
 	url = value["UrlWithAutoLogOnToken"]
-	subtitle = value["Summary"]
-	lijst = lijst + '{"uid":"desktop","type":"file","title":"' + title + '","subtitle":"' + subtitle + '","arg":"' + url + '","autocomplete":"Desktop","icon":{"type":"link","path":"link.png"}},'
+	subtitle = value["Summary"].replace('"','')
+	lijst = lijst + '{"uid":"","type":"file","title":"' + title + '","subtitle":"' + subtitle + '","arg":"' + url + '","autocomplete":"no","icon":{"type":"link","path":"link.png"}},'
 
 	if counter &gt; 10 :
     		break
@@ -151,25 +523,6 @@ sys.stdout.write(output)
 			<string>AD00D284-C85A-451C-A480-FE141AF0F103</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>A7260142-98E3-480B-9156-959C2AE8F64D</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -239,13 +592,13 @@ lijst = ''
 eind = ']}'
 counter = 0
 
-aantal = '{"uid":"total","type":"icon","title":"Alle resultaten","subtitle":"Klik hier voor alle resultaten op LI","arg":"https://www.legalintelligence.com/search?q=' + zoekterm + '","autocomplete":"Desktop","icon":{"type":"icon","path":""}}'
+aantal = '{"uid":"","type":"icon","title":"Alle resultaten","subtitle":"Klik hier voor alle resultaten op LI","arg":"https://www.legalintelligence.com/search?q=' + zoekterm + '","autocomplete":"no","icon":{"type":"icon","path":""}}'
 
 for value in values["Documents"]:	
-	title = value["Title"]
+	title = value["Title"].replace('"','')
 	url = value["UrlWithAutoLogOnToken"]
-	subtitle = value["Summary"]
-	lijst = lijst + '{"uid":"desktop","type":"file","title":"' + title + '","subtitle":"' + subtitle + '","arg":"' + url + '","autocomplete":"Desktop","icon":{"type":"link","path":"link.png"}},'
+	subtitle = value["Summary"].replace('"','')
+	lijst = lijst + '{"uid":"","type":"file","title":"' + title + '","subtitle":"' + subtitle + '","arg":"' + url + '","autocomplete":"Desktop","icon":{"type":"link","path":"link.png"}},'
 
 	if counter &gt; 10 :
     		break
@@ -283,6 +636,12 @@ sys.stdout.write(output)
 
 Type 'lf [Search term]' and you're good to go. Hitting Return on a result will go to the legalintelligence link which is often straight to the document.
 
+Type 'hr' and you'll get the last 7 days of Hoge Raad rulings. I'm working on a way to specify these by area (eg. only civil law cases)
+
+Type 'phr' and you'll get the last 7 days of AG Opinons
+
+Type 'wet [search term]' and you'll search the wetten.overheid.nl database for any law that is in force as of this moment. 
+
 You can also get the latest articles published in your favourite journal by using the 'laatste [abbreviation]'
 
 The workflow requires your ClientSecret and ClientID. Enter those --&gt;
@@ -291,26 +650,47 @@ ClientID = most likely your email address
 ClientSecret can be generated by visiting this link while you're logged in on Legal Intelligence : https://www.legalintelligence.com/userprofile?opengenerateapikeylightbox=true</string>
 	<key>uidata</key>
 	<dict>
+		<key>64AC0E03-AA9D-46AA-87C7-20F608D300EA</key>
+		<dict>
+			<key>xpos</key>
+			<integer>30</integer>
+			<key>ypos</key>
+			<integer>235</integer>
+		</dict>
+		<key>85BCF534-AF41-44A1-9F56-1EF3F1E6725B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>30</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
 		<key>90D24FB3-8E0D-48E8-982C-CFEF682E5083</key>
 		<dict>
 			<key>xpos</key>
-			<integer>245</integer>
+			<integer>30</integer>
 			<key>ypos</key>
-			<integer>375</integer>
+			<integer>480</integer>
 		</dict>
 		<key>A7260142-98E3-480B-9156-959C2AE8F64D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>540</integer>
+			<integer>330</integer>
 			<key>ypos</key>
-			<integer>305</integer>
+			<integer>285</integer>
 		</dict>
 		<key>AD00D284-C85A-451C-A480-FE141AF0F103</key>
 		<dict>
 			<key>xpos</key>
-			<integer>245</integer>
+			<integer>25</integer>
 			<key>ypos</key>
-			<integer>250</integer>
+			<integer>355</integer>
+		</dict>
+		<key>C6C2D9B2-4C4F-4ABF-BA59-BF5384D7579E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>30</integer>
+			<key>ypos</key>
+			<integer>125</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -318,7 +698,7 @@ ClientSecret can be generated by visiting this link while you're logged in on Le
 		<key>clientid</key>
 		<string>a.berlee@uu.nl</string>
 		<key>clientsecret</key>
-		<string>790b26f6-1f86-494c-99cc-e8c3d3fd5e70</string>
+		<string>7cf1911d-b54a-4c18-a1d3-3121904b96e1</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
@@ -326,7 +706,7 @@ ClientSecret can be generated by visiting this link while you're logged in on Le
 		<string>clientsecret</string>
 	</array>
 	<key>version</key>
-	<string>1.2</string>
+	<string>1.3</string>
 	<key>webaddress</key>
 	<string>www.annaberlee.nl</string>
 </dict>
