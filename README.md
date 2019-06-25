@@ -32,7 +32,7 @@ Open the Environmental Variables and insert your ClientID (for me it was my univ
 Save and that ought to do it!
 
 ## Dependencies
-The workflow requires the Python requests module which is bundled in the released workflow so no need to install it separately. So this is only relevant if you create the workflow using the .plist file in this repository. 
+The workflow requires the Python requests module and xmltodict module which are both bundled in the released workflow so no need to install it separately. So this is only relevant if you create the workflow using the .plist file in this repository. 
 
 
 # TODO
