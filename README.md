@@ -6,6 +6,16 @@ You need not be logged into Legal Intelligence.
 
 ![](Lawfredinaction.gif)
 
+## New features in v 1.3 - Search laws and reveal latest Hoge Raad rulings and AG opinions
+No noeed to install anything for this
+
+Use 'wet [query]' to query the law you're searching for. Abbreviations are allowed
+Use 'hr' to view the last 7 days of Hoge Raad rulings
+Use 'phr' to view the last 7 days of AG Opinions
+
+![](lawfred1-3.gif)
+
+
 # Installation 
 Download the workflow from [releases](https://github.com/ABeehive/lawfred-intelligence/releases). 
 
