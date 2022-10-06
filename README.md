@@ -1,72 +1,62 @@
 # Lawfred Intelligence
-Search Legal Intelligence directly from your Alfred App. 
-It will display the 10 most relevant results. Clicking a result will open the Legal Intelligence link to the document. If your desired result isn't there, there is also a 'view all results', which directs you to your search query on Legal Intelligence. 
-You can also view the latest articles of a particular journal if you know the abbreviation by typing 'laatste [abbreviation]'
-You need not be logged into Legal Intelligence.
+Doorzoek Legal Intelligence meteen vanuit uw Alfred App. De 10 meest relevante resultaten worden getoond. Op een resultaat klikken zorgt ervoor dat de Legal Intelligence link naar het document wordt geopend, dat betekent veelal het door de uitgever opgemaakte document. Als uw zoekopdracht niet meteen succesvol is kunt u ook 'view all results' klikken en wordt u naar Legal Intelligence gestuurd. 
+
+U kunt ook de laatste 10 artikelen van uw favoriete tijdschrift zien door 'laatste [afkorting tijdschrift]' in te toetsen. 
+
+Het is niet nodig dat u ingelogd bent via Legal Intelligence. 
 
 ![](Lawfredinaction.gif)
 
-## New features in v 1.4 - Search laws, parlementary documentation (kamerstukken), and reveal latest Hoge Raad rulings and AG opinions
-No need to install anything for this
+## Nieuw in v.1.4. Zoek naar Kamerstukken, wetten, en meer
 
-Type 'wet [search term]' and you'll search the wetten.overheid.nl database for any law that is in force as of this moment. 
-
-Type 'hr' en zie direct de laatste 7 dagen aan arresten van de Hoge Raad
-
-Type 'phr' en zie direct de uitgevaardigde AG en PHR conclusies van de afgelopen 7 dagen (NL)
-
-Typ 'rs [search term]' en zoek direct op Rechtspraak.nl naar uitspraken die de zoekterm hebben
-
-Typ 'ECLI [ECLI:NL:xxxxxxx]' en ga direct naar de uitspraak op Rechtspraak.nl 
-
-Typ 'curia [search term]' en zoek direct op partijnaam naar HvJEU uitspraken
-
-Type 'curiaz  [search term]' en zoek op C-nummer van een zaak bij het HvJEU
-
-Typ 'kst' voor kamerstukken. U wordt dan gevraagd naar het dossiernummer. Voer dit in zonder spaties. Daarna ook eventueel een ordernummer (bijv. 3 voor de Memorie van toelichting of 2 als het gaat om het wetsvoorstel) en dan komt u direct op de website van het kamerstuk.
-
-Typ 'kstz' voor zoeken binnen kamerstukken zonder dat u het dossiernummer weet. Dit is vrij zoeken. 
-
-Typ 'ic' voor de internetconsultaties. U kunt 'ic + [search term]' gebruiken om meteen in de internetconsultaties te zoeken
-
-Typ 'evrm' voor de tekst van het EVRM
-
-Typ 'hv' voor de tekst van het Handvest
+- Typ 'lf [zoekterm]' en er wordt meteen gezocht. Kies het artikel uit dat u wilt lezen en druk Enter. U komt meteen bij de brontekst uit (veelal de door de uitgever opgemaakte PDF) 
+- Typ 'laatste' voor de laatste artikelen in uw favoriete tijdschrift. 'laatste  [afkorting]'. Let goed op, dit is hoofdlettergevoelig. Controleer de afkorting van de bron via  https://www.legalintelligence.com/sources 
+- Typ 'hr' en zie direct de laatste 7 dagen aan arresten van de Hoge Raad
+- Typ 'phr' en zie direct de uitgevaardigde AG en PHR conclusies van de afgelopen 7 dagen (NL)
+- Typ 'rs [zoekterm]' en zoek direct op Rechtspraak.nl naar uitspraken die de zoekterm hebben
+- Typ 'ECLI [ECLI:NL:xxxxxxx]' en ga direct naar de uitspraak op Rechtspraak.nl 
+- Typ 'curia [zoekterm]' en zoek direct op partijnaam naar HvJEU uitspraken
+- Typ 'curiaz  [zoekterm]' en zoek op C-nummer van een zaak bij het HvJEU
+- Typ 'wet [zoekterm]' and you'll search the wetten.overheid.nl database for any law that is in force as of this moment. 
+- Typ 'kst' voor kamerstukken. U wordt dan gevraagd naar het dossiernummer. Voer dit in zonder spaties. Daarna ook eventueel een ordernummer (bijv. 3 voor de Memorie van toelichting of 2 als het gaat om het wetsvoorstel) en dan komt u direct op de website van het kamerstuk.
+- Typ 'kstz' voor zoeken binnen kamerstukken zonder dat u het dossiernummer weet. Dit is vrij zoeken. 
+- Typ 'ic' voor de internetconsultaties. U kunt 'ic + [search term]' gebruiken om meteen in de internetconsultaties te zoeken
+- Typ 'evrm' voor de tekst van het EVRM
+- Typ 'hv' voor de tekst van het Handvest
 
 
 
 ![](lawfred1-3.gif)
 
 
-# Installation 
-Download the workflow from [releases](https://github.com/ABeehive/lawfred-intelligence/releases). 
+# Installatie 
+Download de workflow via [releases](https://github.com/ABeehive/lawfred-intelligence/releases). 
 
-You require a Legal Intelligence account and a client-secret.
-It also requires an Alfred Powerpack license.
+U moet een Legal Intelligence account hebben en een zogenoemd client-secret. Om een workflow te draaien in Alfred is ook een Alfred Powerpack licentie nodig
 
-## Getting a client-secret 
-Log into your Legal Intelligence account. Then simply click [this link](https://www.legalintelligence.com/userprofile?opengenerateapikeylightbox=true) and generate a client secret. Copy this somewhere as you'll need it for your authorisation token, and it is not displayed in your account. 
+## Hoe kom ik aan een client-secret 
+Log in op uw Legal Intelligence account. klik dan [deze](https://www.legalintelligence.com/userprofile?opengenerateapikeylightbox=true) link. Dit genereert een client secret of vraag u om dit te doen. Kopieer deze en sla het eventjes ergens op. Het wordt niet zichtbaar opgeslagen in uw Legal Intelligence account zelf. 
 
-## Insert your client-secret and client-ID in workflow
-Open the imported workflow in Alfred. 
-Open the Environmental Variables and insert your ClientID (for me it was my university email address) and your ClientSecret that you generated earlier.
+## Client-id en Client-secret invoegen in workflow
+Open de geimporteerde workflow in Alfred. 
+Open de Environmental Variables and voeg uw ClientID in (voor mij was dit mijn emailadres) voeg ook uw Client-secret in dat u heeft gegenereerd in de stap hierboven. 
 
-Save and that ought to do it!
+Opslaan en dan zou het moeten werken!
 
-## Dependencies
-The workflow requires the Python urllib3, requests, xmltodict module which are all bundled in the released workflow so no need to install it separately. 
+## Afhankelijkheden
+De workflow maakt gebruik van Python libraries zoals: urllib3, requests, en xmltodict. Deze zijn als het goed is allemaal gebundeld in de workflow dus hoeven niet apart te worden geinstalleerd.  
 
-With the phasing out of python2 there were some minor issues. I've solved these by calling an external script in the script filter function. This however required that you check where your python3 is located. 
+Met het uitfaseren van python2 moest de workflow anders worden opgebouwd. Nu wordt er gebruik gemaakt van de external script functie in 'script filters'. Dit kan voor een probleem zorgen, namelijk als de shebang niet overeenkomt met de locatie van python3. 
 
-Go to Terminal.app → type 'which python3' and if the result is : /usr/local/bin/python3. Then there's no problem
-If however it gives you something else, then you have to change _all_ the instances where #!/usr/local/bin/python3
- is mentioned at the very beginning of each external script (double click the script filters, open the file and change #!/usr/local/bin/python3
- to #!+result of the query 'which python3' make sure the path is preceded by the #!. Perhaps this also requires you install the modules above seperately. 
+U kunt dit controleren op de volgende wijze (hoeft niet als alles werkt)
+Ga naar de terminal.app → typ: 'which python3' (zonder aanhalingstekens) en als het resultaat is : /usr/local/bin/python3. Dan hoeft u niets te doen. Als er echter iets anders staat dan moet u dit even kopieren en overal veranderen in de external scripts. 
 
-# TODO
-- [X] ~~Fix bug that less than 10 results won't be displayed. (has to do with the use of count function)~~
-- [x] ~~Include a delay, so that api is not called for each letter that is typed~~
-- [x] ~~Find a way that login is not required in browser for it to work~~
-- [x] ~~Find a way to automatically generate authorisation token~~
-- [x] ~~Insert a link to all the search results in Legal Intelligence itself~~
-- [ ] Searching latest issue of a journal now requires the correct use of capitals for the abbreviation. I want to make it irrelevant whether the user types in the correct capitalisation in the abbreviation.
+Dat doet u als volgt: 
+1. klik op de onderdelen 'script filter' in de workflow. 
+2. klik op 'open file'
+3. verander #!/usr/local/bin/python3 (helemaal bovenaan) door: #! + het resultaat van de vraag 'which python3' . Zorg ervoor dat #! blijft staan! 
+4. Opslaan en naar de volgende. Herhaal dit voor alle 'Script Filters' in de workflow. 
+
+Werkt het nog niet, moeten misschien toch de modules worden geinstalleerd, maar dat lijkt me niet waarschijnlijk. 
+
+
