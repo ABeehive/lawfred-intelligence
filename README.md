@@ -54,7 +54,7 @@ Open the Environmental Variables and insert your ClientID (for me it was my univ
 Save and that ought to do it!
 
 ## Dependencies
-The workflow requires the Python urllib3, requests, xmltodict module which are all bundled in the released workflow so no need to install it separately. So this is only relevant if you create the workflow using the .plist file in this repository. 
+The workflow requires the Python urllib3, requests, xmltodict module which are all bundled in the released workflow so no need to install it separately. 
 
 With the phasing out of python2 there were some minor issues. I've solved these by calling an external script in the script filter function. This however required that you check where your python3 is located. 
 
