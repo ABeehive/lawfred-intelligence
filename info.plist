@@ -3,14 +3,91 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>lawfred-intelligence</string>
+	<string></string>
 	<key>connections</key>
 	<dict>
+		<key>032200F4-009B-4380-8075-828BF0F48C6E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F5EAA9D4-922E-4978-9649-F2B1DE7CD5AA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>0E3FA670-B231-491B-8C76-1636224A75D7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C2F8270A-CF77-48B2-A435-3F79AD1C38A0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>18AFF68B-D10C-4F92-AEAA-E0318D2DDE7A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8AA951A4-5B52-4C22-8662-A4B6BD16651B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
+		<key>45323B4C-ED17-4414-9DED-4A3F959EE674</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F38D0DDC-CA1E-426A-B49F-648CF33CD5E7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>64AC0E03-AA9D-46AA-87C7-20F608D300EA</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>A7260142-98E3-480B-9156-959C2AE8F64D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>68A840E2-F11E-487A-AC70-B380D5170182</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B245385E-B79F-4B7D-BDB4-2D1AA6C98AAF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>22E5CB21-EEEB-4C9C-9C47-A521AE4F9130</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>939E8225-35F6-412A-8D4C-C72E934E353C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -32,11 +109,101 @@
 				<false/>
 			</dict>
 		</array>
+		<key>8AA951A4-5B52-4C22-8662-A4B6BD16651B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>90260A20-7D70-4A99-ABA1-A725E69883A5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8DA6EC92-450B-421B-97EB-2991F336D5B6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>45323B4C-ED17-4414-9DED-4A3F959EE674</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>90260A20-7D70-4A99-ABA1-A725E69883A5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>99D21D27-5D8B-4866-8B92-B86FF0535115</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>90D24FB3-8E0D-48E8-982C-CFEF682E5083</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>A7260142-98E3-480B-9156-959C2AE8F64D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>955B6832-835F-4A54-9655-2D895769A496</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BEF16AD1-59C7-44B5-874A-14F76E3C5468</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>22E5CB21-EEEB-4C9C-9C47-A521AE4F9130</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E9690533-19C5-475E-A174-A9570DB2F653</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>99D21D27-5D8B-4866-8B92-B86FF0535115</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>955B6832-835F-4A54-9655-2D895769A496</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A1EE7842-56F3-4DCE-AB86-0D94024CB2DF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E20B1234-0400-4C23-B718-29F941005C46</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -60,6 +227,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>B09EFEEE-C244-4D0C-ADDA-53FCFE8CAA5A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F877384C-1145-4C9D-A2C6-5B7F2C26C7B9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>C6C2D9B2-4C4F-4ABF-BA59-BF5384D7579E</key>
 		<array>
 			<dict>
@@ -73,15 +253,92 @@
 				<false/>
 			</dict>
 		</array>
+		<key>CF623170-D182-413F-A00E-F128B54317EA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A8415C34-F1F0-4A03-B289-33B246B3B2D0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E66B5D6D-5B40-4D79-A8A0-E4791DEA3250</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>68A840E2-F11E-487A-AC70-B380D5170182</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F38D0DDC-CA1E-426A-B49F-648CF33CD5E7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4BAFF853-AB6C-4342-A00E-29901BEA11C8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F800AF73-BD3A-40CE-B2F7-DF99F7B572DF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>25A2D84D-96A2-414F-8A31-ABD3D40C022F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F877384C-1145-4C9D-A2C6-5B7F2C26C7B9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E740B8E7-8911-4FE1-8403-DEE351EE8FF2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>22E5CB21-EEEB-4C9C-9C47-A521AE4F9130</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>05B05D92-13D8-4CD8-ABC4-50CDF08D448D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Anna Berlee</string>
 	<key>description</key>
-	<string>Search Dutch Legal Sources</string>
+	<string>Zoeken in je LegalIntelligence bronnen en wat extra's</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Lawfred Intelligence</string>
+	<string>Lawfred Intelligence v1.4</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -173,13 +430,13 @@ sys.stdout.write(output)</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string></string>
+				<string>wetzoeken</string>
 				<key>subtext</key>
 				<string>Typ een deel van de naam of de afkorting.</string>
 				<key>title</key>
 				<string>Zoeken naar een wet</string>
 				<key>type</key>
-				<integer>3</integer>
+				<integer>8</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -277,13 +534,13 @@ sys.stdout.write(output)
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string></string>
+				<string>hr</string>
 				<key>subtext</key>
 				<string>Van de afgelopen week</string>
 				<key>title</key>
 				<string>Laaste HR uitspraken</string>
 				<key>type</key>
-				<integer>3</integer>
+				<integer>8</integer>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -381,13 +638,13 @@ sys.stdout.write(output)
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string></string>
+				<string>phr</string>
 				<key>subtext</key>
 				<string>Van de afgelopen week</string>
 				<key>title</key>
 				<string>Laaste AG conclusies</string>
 				<key>type</key>
-				<integer>3</integer>
+				<integer>8</integer>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -403,12 +660,14 @@ sys.stdout.write(output)
 			<dict>
 				<key>browser</key>
 				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -507,13 +766,13 @@ sys.stdout.write(output)
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string></string>
+				<string>lf</string>
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
 				<string>zoeken</string>
 				<key>type</key>
-				<integer>3</integer>
+				<integer>8</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -613,13 +872,13 @@ sys.stdout.write(output)
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string></string>
+				<string>laatste</string>
 				<key>subtext</key>
 				<string>Let op hoofdlettergebruik, bijv. : WPNR maar MvV</string>
 				<key>title</key>
 				<string>Overzicht van het laatste nummer van...</string>
 				<key>type</key>
-				<integer>3</integer>
+				<integer>8</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -630,75 +889,987 @@ sys.stdout.write(output)
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://zoek.officielebekendmakingen.nl/kst-{var:dossier}-{var:nr}.html</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>BEF16AD1-59C7-44B5-874A-14F76E3C5468</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>nr</string>
+				<key>subtext</key>
+				<string>Laat leeg voor hele dossier</string>
+				<key>text</key>
+				<string>Wat is het ordernummer?</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>90260A20-7D70-4A99-ABA1-A725E69883A5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>kst</string>
+				<key>subtext</key>
+				<string>Voer het dossiernummer in (zonder spaties)</string>
+				<key>text</key>
+				<string>Kamerstukken zoeken</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>18AFF68B-D10C-4F92-AEAA-E0318D2DDE7A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>dossier</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>8AA951A4-5B52-4C22-8662-A4B6BD16651B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>nr</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>99D21D27-5D8B-4866-8B92-B86FF0535115</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:nr}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>1</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>OPEN URL</string>
+						<key>uid</key>
+						<string>22E5CB21-EEEB-4C9C-9C47-A521AE4F9130</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Open dossier</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>955B6832-835F-4A54-9655-2D895769A496</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://zoek.officielebekendmakingen.nl/dossier/{var:dossier}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>E9690533-19C5-475E-A174-A9570DB2F653</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://www.internetconsultatie.nl/</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>B245385E-B79F-4B7D-BDB4-2D1AA6C98AAF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>ic</string>
+				<key>subtext</key>
+				<string>Zoek binnen internetconsultaties</string>
+				<key>text</key>
+				<string>Internetconsultatie</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E66B5D6D-5B40-4D79-A8A0-E4791DEA3250</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>OPEN URL</string>
+						<key>uid</key>
+						<string>22E5CB21-EEEB-4C9C-9C47-A521AE4F9130</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Open Internetconsultatie</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>68A840E2-F11E-487A-AC70-B380D5170182</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://www.internetconsultatie.nl/zoeken/resultaat?Trefwoorden={query}&amp;TrefwoordenSearchScope=TitelEnTekst</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>939E8225-35F6-412A-8D4C-C72E934E353C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>kstz</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Kamerstukken zoeken</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>A1EE7842-56F3-4DCE-AB86-0D94024CB2DF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://www.tweedekamer.nl/kamerstukken?search_str={query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>E20B1234-0400-4C23-B718-29F941005C46</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://www.echr.coe.int/Documents/Convention_NLD.pdf</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>E740B8E7-8911-4FE1-8403-DEE351EE8FF2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>evrm</string>
+				<key>subtext</key>
+				<string>Standaard in NL spatie en EN krijg je de Engelse versie</string>
+				<key>text</key>
+				<string>Europees Verdrag voor de Rechten van de Mens</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>B09EFEEE-C244-4D0C-ADDA-53FCFE8CAA5A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>OPEN URL</string>
+						<key>uid</key>
+						<string>22E5CB21-EEEB-4C9C-9C47-A521AE4F9130</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>OPEN ENG</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>F877384C-1145-4C9D-A2C6-5B7F2C26C7B9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>curia</string>
+				<key>subtext</key>
+				<string>using the name of one of the parties</string>
+				<key>text</key>
+				<string>Search CJEU cases</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>CF623170-D182-413F-A00E-F128B54317EA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>http://curia.europa.eu/juris/liste.jsf?oqp=&amp;for=&amp;mat=or&amp;lgrec=en&amp;jge=&amp;td=%3BALL&amp;jur=C%2CT%2CF&amp;page=1&amp;dates=&amp;pcs=Oor&amp;lg=&amp;parties={query}&amp;pro=&amp;nat=or&amp;cit=none%252CC%252CCJ%252CR%252C2008E%252C%252C%252C%252C%252C%252C%252C%252C%252C%252Ctrue%252Cfalse%252Cfalse&amp;language=en&amp;avg=&amp;cid=3857806</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>A8415C34-F1F0-4A03-B289-33B246B3B2D0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://www.echr.coe.int/Documents/Convention_ENG.pdf</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>05B05D92-13D8-4CD8-ABC4-50CDF08D448D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>http://curia.europa.eu/juris/liste.jsf?oqp=&amp;for=&amp;mat=or&amp;jge=&amp;td=%3BALL&amp;jur=C%2CT%2CF&amp;num={query}&amp;page=1&amp;dates=&amp;pcs=Oor&amp;lg=&amp;pro=&amp;nat=or&amp;cit=none%252CC%252CCJ%252CR%252C2008E%252C%252C%252C%252C%252C%252C%252C%252C%252C%252Ctrue%252Cfalse%252Cfalse&amp;language=en&amp;avg=&amp;cid=3857806</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>C2F8270A-CF77-48B2-A435-3F79AD1C38A0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>curiaz</string>
+				<key>subtext</key>
+				<string>Using the Case number (c-something)</string>
+				<key>text</key>
+				<string>Search CJEU</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>0E3FA670-B231-491B-8C76-1636224A75D7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>hv</string>
+				<key>subtext</key>
+				<string>Standaard in NL spatie en EN krijg je de Engelse versie</string>
+				<key>text</key>
+				<string>Open Safari met EU Handvest tekst</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>8DA6EC92-450B-421B-97EB-2991F336D5B6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string>com.apple.Safari</string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX:12012P/TXT:{query}:HTML</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>4BAFF853-AB6C-4342-A00E-29901BEA11C8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>Open URL</string>
+						<key>uid</key>
+						<string>F2D91683-5C8E-40CE-86CD-A29714BF54F1</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Open ENG</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>F38D0DDC-CA1E-426A-B49F-648CF33CD5E7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>Taal</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>45323B4C-ED17-4414-9DED-4A3F959EE674</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ecli</string>
+				<key>subtext</key>
+				<string>Typ het ECLI nummer in en ga meteen naar de uitspraak</string>
+				<key>text</key>
+				<string>Uitspraak via ECLI</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F800AF73-BD3A-40CE-B2F7-DF99F7B572DF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>http://deeplink.rechtspraak.nl/uitspraak?id={query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>25A2D84D-96A2-414F-8A31-ABD3D40C022F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://uitspraken.rechtspraak.nl/#zoekverfijn/zt[0][zt]={query}&amp;zt[0][fi]=AlleVelden&amp;zt[0][ft]=Alle+velden&amp;so=Relevance&amp;ps[]=ps1</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>F5EAA9D4-922E-4978-9649-F2B1DE7CD5AA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>rs</string>
+				<key>subtext</key>
+				<string>Vrije tekst</string>
+				<key>text</key>
+				<string>Zoeken in Rechtspraak.nl</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>032200F4-009B-4380-8075-828BF0F48C6E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>This workflow allows you to search through Legal Intelligence straight from Alfred. 
 
 Type 'lf [Search term]' and you're good to go. Hitting Return on a result will go to the legalintelligence link which is often straight to the document.
 
-Type 'hr' and you'll get the last 7 days of Hoge Raad rulings. I'm working on a way to specify these by area (eg. only civil law cases)
+Typ 'laatste' voor de laatste artikelen in uw favoriete tijdschrift. 'laatste  [abbreviation]'. Let goed op, dit is hoofdlettergevoelig. Controleer de afkorting van de bron via  https://www.legalintelligence.com/sources 
 
-Type 'phr' and you'll get the last 7 days of AG Opinons
+Type 'hr' en zie direct de laatste 7 dagen aan arresten van de Hoge Raad
+
+Type 'phr' en zie direct de uitgevaardigde AG en PHR conclusies van de afgelopen 7 dagen (NL)
+
+Typ 'rs [search term]' en zoek direct op Rechtspraak.nl naar uitspraken die de zoekterm hebben
+Typ 'ECLI [ECLI:NL:xxxxxxx]' en ga direct naar de uitspraak op Rechtspraak.nl 
+
+Typ 'curia [search term]' en zoek direct op partijnaam naar HvJEU uitspraken
+Type 'curiaz  [search term]' en zoek op C-nummer van een zaak bij het HvJEU
 
 Type 'wet [search term]' and you'll search the wetten.overheid.nl database for any law that is in force as of this moment. 
 
-You can also get the latest articles published in your favourite journal by using the 'laatste [abbreviation]'
+Typ 'kst' voor kamerstukken. U wordt dan gevraagd naar het dossiernummer. Voer dit in zonder spaties. Daarna ook eventueel een ordernummer (bijv. 3 voor de Memorie van toelichting of 2 als het gaat om het wetsvoorstel) en dan komt u direct op de website van het kamerstuk.
 
-The workflow requires your ClientSecret and ClientID. Enter those --&gt;
+Typ 'kstz' voor zoeken binnen kamerstukken zonder dat u het dossiernummer weet. Dit is vrij zoeken. 
 
+
+Typ 'ic' voor de internetconsultaties. U kunt 'ic + [search term]' gebruiken om meteen in de internetconsultaties te zoeken
+
+Typ 'evrm' voor de tekst van het EVRM
+Typ 'hv' voor de tekst van het Handvest
+
+
+
+The workflow requires your ClientSecret and ClientID. 
+
+Enter those --&gt;
 ClientID = most likely your email address
 ClientSecret can be generated by visiting this link while you're logged in on Legal Intelligence : https://www.legalintelligence.com/userprofile?opengenerateapikeylightbox=true</string>
 	<key>uidata</key>
 	<dict>
+		<key>032200F4-009B-4380-8075-828BF0F48C6E</key>
+		<dict>
+			<key>xpos</key>
+			<real>615</real>
+			<key>ypos</key>
+			<real>1715</real>
+		</dict>
+		<key>05B05D92-13D8-4CD8-ABC4-50CDF08D448D</key>
+		<dict>
+			<key>xpos</key>
+			<real>420</real>
+			<key>ypos</key>
+			<real>1390</real>
+		</dict>
+		<key>0E3FA670-B231-491B-8C76-1636224A75D7</key>
+		<dict>
+			<key>xpos</key>
+			<real>610</real>
+			<key>ypos</key>
+			<real>1465</real>
+		</dict>
+		<key>18AFF68B-D10C-4F92-AEAA-E0318D2DDE7A</key>
+		<dict>
+			<key>note</key>
+			<string>Voer het kamerstuknummer in</string>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>615</real>
+		</dict>
+		<key>25A2D84D-96A2-414F-8A31-ABD3D40C022F</key>
+		<dict>
+			<key>xpos</key>
+			<real>775</real>
+			<key>ypos</key>
+			<real>1590</real>
+		</dict>
+		<key>45323B4C-ED17-4414-9DED-4A3F959EE674</key>
+		<dict>
+			<key>xpos</key>
+			<real>210</real>
+			<key>ypos</key>
+			<real>1525</real>
+		</dict>
+		<key>4BAFF853-AB6C-4342-A00E-29901BEA11C8</key>
+		<dict>
+			<key>xpos</key>
+			<real>415</real>
+			<key>ypos</key>
+			<real>1510</real>
+		</dict>
 		<key>64AC0E03-AA9D-46AA-87C7-20F608D300EA</key>
 		<dict>
 			<key>xpos</key>
-			<integer>30</integer>
+			<real>30</real>
 			<key>ypos</key>
-			<integer>235</integer>
+			<real>235</real>
+		</dict>
+		<key>68A840E2-F11E-487A-AC70-B380D5170182</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>note</key>
+			<string>Wordt dossier zonder nummer ingevoerd dan open heel dossier. Met nummer, dan specifieke kamerstuk</string>
+			<key>xpos</key>
+			<real>220</real>
+			<key>ypos</key>
+			<real>860</real>
 		</dict>
 		<key>85BCF534-AF41-44A1-9F56-1EF3F1E6725B</key>
 		<dict>
 			<key>xpos</key>
-			<integer>30</integer>
+			<real>30</real>
 			<key>ypos</key>
-			<integer>10</integer>
+			<real>15</real>
+		</dict>
+		<key>8AA951A4-5B52-4C22-8662-A4B6BD16651B</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
+			<key>note</key>
+			<string>Dossiernummer wordt als variabele 'dossier' opgenomen</string>
+			<key>xpos</key>
+			<real>205</real>
+			<key>ypos</key>
+			<real>640</real>
+		</dict>
+		<key>8DA6EC92-450B-421B-97EB-2991F336D5B6</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
+			<key>note</key>
+			<string>EU Handvest</string>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>1495</real>
+		</dict>
+		<key>90260A20-7D70-4A99-ABA1-A725E69883A5</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Voer het ordernummer in</string>
+			<key>xpos</key>
+			<real>290</real>
+			<key>ypos</key>
+			<real>615</real>
 		</dict>
 		<key>90D24FB3-8E0D-48E8-982C-CFEF682E5083</key>
 		<dict>
 			<key>xpos</key>
-			<integer>30</integer>
+			<real>30</real>
 			<key>ypos</key>
-			<integer>480</integer>
+			<real>480</real>
+		</dict>
+		<key>939E8225-35F6-412A-8D4C-C72E934E353C</key>
+		<dict>
+			<key>note</key>
+			<string>URL wordt opgebouwd als https://zoek.officielebekendmakingen.nl/dossier/{var:dossier}</string>
+			<key>xpos</key>
+			<real>410</real>
+			<key>ypos</key>
+			<real>1010</real>
+		</dict>
+		<key>955B6832-835F-4A54-9655-2D895769A496</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>note</key>
+			<string>Wordt dossier zonder nummer ingevoerd dan open heel dossier. Met nummer, dan specifieke kamerstuk</string>
+			<key>xpos</key>
+			<real>550</real>
+			<key>ypos</key>
+			<real>645</real>
+		</dict>
+		<key>99D21D27-5D8B-4866-8B92-B86FF0535115</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>4</integer>
+			<key>note</key>
+			<string>ordernummer wordt als variabele 'nr' opgevoerd</string>
+			<key>xpos</key>
+			<real>460</real>
+			<key>ypos</key>
+			<real>645</real>
+		</dict>
+		<key>A1EE7842-56F3-4DCE-AB86-0D94024CB2DF</key>
+		<dict>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>1030</real>
 		</dict>
 		<key>A7260142-98E3-480B-9156-959C2AE8F64D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>330</integer>
+			<real>395</real>
 			<key>ypos</key>
-			<integer>285</integer>
+			<real>240</real>
+		</dict>
+		<key>A8415C34-F1F0-4A03-B289-33B246B3B2D0</key>
+		<dict>
+			<key>xpos</key>
+			<real>775</real>
+			<key>ypos</key>
+			<real>1340</real>
 		</dict>
 		<key>AD00D284-C85A-451C-A480-FE141AF0F103</key>
 		<dict>
 			<key>xpos</key>
-			<integer>25</integer>
+			<real>30</real>
 			<key>ypos</key>
-			<integer>355</integer>
+			<real>355</real>
+		</dict>
+		<key>B09EFEEE-C244-4D0C-ADDA-53FCFE8CAA5A</key>
+		<dict>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>1300</real>
+		</dict>
+		<key>B245385E-B79F-4B7D-BDB4-2D1AA6C98AAF</key>
+		<dict>
+			<key>note</key>
+			<string>URL wordt opgebouwd als https://zoek.officielebekendmakingen.nl/kst-{var:dossier}-{var:nr}.html</string>
+			<key>xpos</key>
+			<real>410</real>
+			<key>ypos</key>
+			<real>800</real>
+		</dict>
+		<key>BEF16AD1-59C7-44B5-874A-14F76E3C5468</key>
+		<dict>
+			<key>note</key>
+			<string>URL wordt opgebouwd als https://zoek.officielebekendmakingen.nl/kst-{var:dossier}-{var:nr}.html</string>
+			<key>xpos</key>
+			<real>715</real>
+			<key>ypos</key>
+			<real>520</real>
+		</dict>
+		<key>C2F8270A-CF77-48B2-A435-3F79AD1C38A0</key>
+		<dict>
+			<key>xpos</key>
+			<real>775</real>
+			<key>ypos</key>
+			<real>1465</real>
 		</dict>
 		<key>C6C2D9B2-4C4F-4ABF-BA59-BF5384D7579E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>30</integer>
+			<real>30</real>
 			<key>ypos</key>
-			<integer>125</integer>
+			<real>125</real>
+		</dict>
+		<key>CF623170-D182-413F-A00E-F128B54317EA</key>
+		<dict>
+			<key>xpos</key>
+			<real>610</real>
+			<key>ypos</key>
+			<real>1340</real>
+		</dict>
+		<key>E20B1234-0400-4C23-B718-29F941005C46</key>
+		<dict>
+			<key>xpos</key>
+			<real>220</real>
+			<key>ypos</key>
+			<real>1035</real>
+		</dict>
+		<key>E66B5D6D-5B40-4D79-A8A0-E4791DEA3250</key>
+		<dict>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>845</real>
+		</dict>
+		<key>E740B8E7-8911-4FE1-8403-DEE351EE8FF2</key>
+		<dict>
+			<key>xpos</key>
+			<real>415</real>
+			<key>ypos</key>
+			<real>1275</real>
+		</dict>
+		<key>E9690533-19C5-475E-A174-A9570DB2F653</key>
+		<dict>
+			<key>note</key>
+			<string>URL wordt opgebouwd als https://zoek.officielebekendmakingen.nl/dossier/{var:dossier}</string>
+			<key>xpos</key>
+			<real>715</real>
+			<key>ypos</key>
+			<real>720</real>
+		</dict>
+		<key>F38D0DDC-CA1E-426A-B49F-648CF33CD5E7</key>
+		<dict>
+			<key>xpos</key>
+			<real>295</real>
+			<key>ypos</key>
+			<real>1515</real>
+		</dict>
+		<key>F5EAA9D4-922E-4978-9649-F2B1DE7CD5AA</key>
+		<dict>
+			<key>xpos</key>
+			<real>775</real>
+			<key>ypos</key>
+			<real>1715</real>
+		</dict>
+		<key>F800AF73-BD3A-40CE-B2F7-DF99F7B572DF</key>
+		<dict>
+			<key>xpos</key>
+			<real>615</real>
+			<key>ypos</key>
+			<real>1590</real>
+		</dict>
+		<key>F877384C-1145-4C9D-A2C6-5B7F2C26C7B9</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>note</key>
+			<string>Wordt en toegevoegd dan in het engels, anders standaard NL.</string>
+			<key>xpos</key>
+			<real>225</real>
+			<key>ypos</key>
+			<real>1315</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>variables</key>
 	<dict>
 		<key>clientid</key>
-		<string>a.berlee@uu.nl</string>
+		<string>anna.berlee@ou.nl</string>
 		<key>clientsecret</key>
-		<string>7cf1911d-b54a-4c18-a1d3-3121904b96e1</string>
+		<string>cae328da-2e98-45af-952f-14cf7729e758</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
@@ -706,7 +1877,7 @@ ClientSecret can be generated by visiting this link while you're logged in on Le
 		<string>clientsecret</string>
 	</array>
 	<key>version</key>
-	<string>1.3</string>
+	<string>1.4</string>
 	<key>webaddress</key>
 	<string>www.annaberlee.nl</string>
 </dict>
